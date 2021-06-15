@@ -29,7 +29,7 @@ $ docker pull numba/ci-linux-32:latest
 $ docker run -v $PWD/.:/opt/recipes -it numba/ci-linux-32:latest  /bin/bash
 ```
 
-Then build the recipes:
+Then build the recipes, inside the container:
 
 ```
 $ /usr/bin/linux32 conda build recipe-1.17.5/
@@ -37,4 +37,5 @@ $ /usr/bin/linux32 conda build recipe-1.20.3/
 ```
 
 And then upload the resulting conda packages accordingly (watch the commmand
-output for details).
+output for details). The Numba team keeps the resulting conda packages on:
+https://anaconda.org/numba/numpy/files#
