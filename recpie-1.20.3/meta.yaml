@@ -1,0 +1,22 @@
+{% set version = "1.20.3" %}
+
+package:
+  name: numpy
+  version: {{ version }}
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python {{ python }}
+    - pip
+  run:
+    - python
+
+about:
+  home: http://numpy.scipy.org/
+  license: BSD-3-Clause
+  summary: Array processing for numbers, strings, records, and objects.
+  doc_url: https://docs.scipy.org/doc/numpy/reference/
+  dev_url: https://github.com/numpy/numpy
