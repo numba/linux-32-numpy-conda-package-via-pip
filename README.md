@@ -12,12 +12,29 @@ Build
 -----
 
 The recipes in this repository use `conda_build_config.yaml` to build Numpy
-versions accross Python versions. To build them
-use:
+versions accross Python versions.
+
+First clone the repo:
 
 ```
-$ conda build recipe-1.17.5/
-$ conda build recipe-1.20.3/
+$ git clone https://github.com/numba/linux-32-numpy-conda-package-via-pip.git
+$ cd linux-32-numpy-conda-package-via-pip
 ```
 
-And then upload the resulting conda packages accordingly.
+You can then obtain and launch a suitable linux-32 container (Also on Docker
+for Mac) with a pre-installed miniconda using:
+
+```
+$ docker pull numba/ci-linux-32:latest
+$ docker run -v $PWD/.:/opt/recipes -it numba/ci-linux-32:latest  /bin/bash
+```
+
+Then build the recipes:
+
+```
+$ /usr/bin/linux32 conda build recipe-1.17.5/
+$ /usr/bin/linux32 conda build recipe-1.20.3/
+```
+
+And then upload the resulting conda packages accordingly (watch the commmand
+output for details).
